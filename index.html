@@ -3,11 +3,344 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arenera Solichata</title>
+  <title>Arenera Solichata | Arena lavada y piedra para tu obra</title>
+  <meta
+    name="description"
+    content="Arenera Solichata ofrece arena lavada, piedra y despacho de materiales para construccion con atencion directa por WhatsApp."
+  >
+  <meta property="og:title" content="Arenera Solichata | Materiales para construccion">
+  <meta
+    property="og:description"
+    content="Cotiza arena lavada, piedra y materiales para tu obra con atencion directa y despacho disponible."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/logo-solichata.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Arenera Solichata</h1>
-  <p>Prototipo inicial en construccion.</p>
+  <div class="page-shell">
+    <header class="site-header" id="inicio">
+      <div class="topbar">
+        <p>Materiales para construccion con atencion directa, despacho y cotizacion por WhatsApp.</p>
+      </div>
+      <nav class="navbar container" aria-label="Principal">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <img src="assets/images/logo-solichata.png" alt="Logo de Arenera Solichata">
+          <div>
+            <strong>Arenera Solichata</strong>
+            <span>Materiales para construccion</span>
+          </div>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-menu"
+          aria-label="Abrir menu de navegacion"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-panel" id="main-menu">
+          <a href="#inicio">Inicio</a>
+          <a href="#productos">Productos</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+          <a class="button button-primary button-nav" href="#pedido">Hacer pedido</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Arenera, despacho y atencion directa</span>
+            <h1>Materiales de calidad para tu obra, directo desde la arenera.</h1>
+            <p class="hero-text">
+              Venta de arena lavada, piedra y materiales para construccion. Realiza tu pedido
+              o solicita una cotizacion de forma rapida por WhatsApp.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#productos">Ver productos</a>
+              <a
+                class="button button-secondary js-whatsapp-link"
+                href="https://wa.me/573000000000?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Arenera%20Solichata."
+                data-message="Hola, quiero hacer un pedido en Arenera Solichata."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hacer pedido por WhatsApp
+              </a>
+            </div>
+            <ul class="trust-list">
+              <li>Atencion directa y confiable</li>
+              <li>Material disponible para obra</li>
+              <li>Despacho y cotizacion rapida</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-visual-frame">
+              <img
+                class="hero-main-image"
+                src="assets/images/hero-quarry.svg"
+                alt="Ilustracion de la arenera con material, volqueta y montanas"
+              >
+              <div class="hero-floating-card">
+                <span>Disponibilidad actual</span>
+                <strong>Arena lavada, piedra y despacho para obra</strong>
+                <ul>
+                  <li>Arena lavada</li>
+                  <li>Piedra</li>
+                  <li>Despacho disponible</li>
+                  <li>Cotizacion por WhatsApp</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="highlights">
+        <div class="container highlights-grid reveal">
+          <article>
+            <strong>Pedidos claros</strong>
+            <p>Solicita cantidades, ubicacion y despacho en una sola conversacion.</p>
+          </article>
+          <article>
+            <strong>Material para obra</strong>
+            <p>Preparado para crecer con mas productos y servicios sin rehacer la pagina.</p>
+          </article>
+          <article>
+            <strong>Imagen profesional</strong>
+            <p>Landing comercial pensada para generar confianza desde el primer vistazo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section products-section" id="productos">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Productos principales</span>
+            <h2>Arena lavada y piedra para diferentes necesidades de construccion.</h2>
+            <p>
+              La seccion esta preparada para crecer con nuevos materiales, categorias y fotos
+              sin cambiar la base del frontend.
+            </p>
+          </div>
+          <div class="products-grid" id="products-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section services-section" id="servicios">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Servicios</span>
+            <h2>Una atencion pensada para obra, despacho y cotizacion rapida.</h2>
+          </div>
+          <div class="services-grid" id="services-grid"></div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="nosotros">
+        <div class="container about-grid">
+          <div class="about-card reveal">
+            <span class="eyebrow">Nosotros</span>
+            <h2>Calidad, cumplimiento y servicio directo para cada pedido.</h2>
+            <p>
+              En Arenera Solichata ofrecemos materiales para construccion con atencion directa,
+              rapida y confiable. Trabajamos con arena lavada, piedra y otros materiales para
+              apoyar obras, proyectos y clientes que necesitan calidad y cumplimiento.
+            </p>
+            <div class="about-stats">
+              <article>
+                <strong>Atencion directa</strong>
+                <span>Respuesta cercana y comercial.</span>
+              </article>
+              <article>
+                <strong>Material disponible</strong>
+                <span>Lista visual para mostrar oferta real.</span>
+              </article>
+              <article>
+                <strong>Pedidos por WhatsApp</strong>
+                <span>Cotizacion agil desde el primer contacto.</span>
+              </article>
+              <article>
+                <strong>Despacho para obras</strong>
+                <span>Diseño preparado para comunicar cobertura.</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="about-visual reveal">
+            <div class="about-image-card">
+              <img
+                src="assets/images/about-owner.svg"
+                alt="Representacion del equipo de Arenera Solichata junto al material"
+              >
+              <div class="about-badge">
+                <span>Arenera Solichata</span>
+                <strong>Atencion comercial con identidad industrial y local.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="galeria">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Galeria</span>
+            <h2>Vista de materiales, despacho, maquinaria y zona de trabajo.</h2>
+            <p>
+              La galeria ya queda lista para intercambiar estas piezas por nuevas fotos reales
+              del negocio sin tocar el diseno general.
+            </p>
+          </div>
+          <div class="gallery-grid" id="gallery-grid"></div>
+        </div>
+      </section>
+
+      <section class="section order-section" id="pedido">
+        <div class="container order-grid">
+          <div class="order-copy reveal">
+            <span class="eyebrow">Pedido y cotizacion</span>
+            <h2>¿Necesitas arena, piedra o material para tu obra?</h2>
+            <p>
+              Completa estos datos y envia un mensaje listo por WhatsApp. Asi el cliente entra
+              en conversacion con toda la informacion importante desde el primer momento.
+            </p>
+            <div class="order-points">
+              <article>
+                <strong>Rapido</strong>
+                <p>El mensaje se arma automaticamente con producto, cantidad y ubicacion.</p>
+              </article>
+              <article>
+                <strong>Claro</strong>
+                <p>Ideal para pedidos puntuales, cotizaciones y solicitudes por volumen.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="order-form-card reveal">
+            <form class="order-form" id="order-form">
+              <label>
+                Nombre
+                <input type="text" id="customer-name" name="name" placeholder="Nombre del cliente" required>
+              </label>
+              <label>
+                Producto de interes
+                <select id="product-interest" name="product" required>
+                  <option value="">Selecciona un producto</option>
+                </select>
+              </label>
+              <label>
+                Cantidad aproximada
+                <input type="text" id="quantity" name="quantity" placeholder="Ej. 3 viajes o 5 m3" required>
+              </label>
+              <label>
+                Ubicacion o direccion
+                <input type="text" id="location" name="location" placeholder="Sector, ciudad o direccion" required>
+              </label>
+              <label>
+                Comentario adicional
+                <textarea
+                  id="comment"
+                  name="comment"
+                  rows="4"
+                  placeholder="Horario, acceso a la obra o detalle adicional"
+                ></textarea>
+              </label>
+              <button class="button button-primary button-block" type="submit">
+                Enviar pedido por WhatsApp
+              </button>
+              <p class="form-note">
+                Este formulario es visual y envia el pedido por WhatsApp. Mas adelante aqui se
+                puede conectar Firebase y un panel administrativo.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-section" id="contacto">
+        <div class="container cta-card reveal">
+          <div>
+            <span class="eyebrow">Contacto directo</span>
+            <h2>Haz tu pedido de materiales hoy mismo.</h2>
+            <p>
+              Escribenos por WhatsApp y recibe atencion directa para cotizar arena, piedra o
+              materiales para tu obra.
+            </p>
+          </div>
+          <a
+            class="button button-primary"
+            href="https://wa.me/573000000000?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Arenera%20Solichata."
+            data-message="Hola, quiero hacer un pedido en Arenera Solichata."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hacer pedido por WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Arenera Solichata</h3>
+          <p>
+            Arena lavada, piedra y materiales para construccion con una presencia clara,
+            confiable y enfocada en generar pedidos directos.
+          </p>
+        </div>
+        <div>
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20mi%20obra." target="_blank" rel="noopener noreferrer">WhatsApp comercial</a></li>
+            <li>Telefono: +57 300 000 0000</li>
+            <li>Direccion: Espacio para ubicar la arenera</li>
+            <li>Redes sociales: Facebook e Instagram</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Arenera Solichata. Prototipo visual para validacion comercial.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Cerrar imagen ampliada">
+      &times;
+    </button>
+    <figure class="lightbox-dialog">
+      <img id="lightbox-image" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
