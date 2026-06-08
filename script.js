@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "573000000000";
+const WHATSAPP_NUMBER = "584141290808";
 
 // TODO(firebase): Reemplazar este array por datos de Firestore para administrar
 // productos, imagenes y disponibilidad desde un panel interno.
@@ -7,7 +7,9 @@ const products = [
     name: "Arena lavada",
     description:
       "Material ideal para construccion, mezclas, acabados y obras que requieren arena limpia y de buena calidad.",
-    image: "assets/images/product-arena.svg",
+    // Foto real de arena; si el cliente confirma que esta imagen corresponde a piedra,
+    // intercambiar solo esta ruta con la del siguiente producto.
+    image: "assets/images/producto-arena.jpg",
     category: "Material de construccion",
     message: "Hola, quiero cotizar Arena lavada."
   },
@@ -15,7 +17,8 @@ const products = [
     name: "Piedra",
     description:
       "Piedra para construccion, relleno, bases y diferentes necesidades de obra.",
-    image: "assets/images/product-piedra.svg",
+    // Foto real de piedra; si visualmente estuviera invertida, cambiar esta ruta por producto-arena.jpg.
+    image: "assets/images/producto-piedra.jpg",
     category: "Material de construccion",
     message: "Hola, quiero cotizar Piedra."
   }
@@ -56,32 +59,33 @@ const services = [
   }
 ];
 
-// TODO(firebase-storage): Reemplazar estos assets por fotos reales administradas
-// en Storage cuando el cliente entregue el paquete definitivo de imagenes.
+// TODO(firebase-storage): Reemplazar o ampliar estas fotos desde Storage cuando
+// se implemente el panel administrativo.
 const galleryItems = [
   {
-    title: "Material listo para obra",
-    description: "Vista principal del area de acopio y volumen disponible.",
-    image: "assets/images/gallery-material.svg",
-    alt: "Ilustracion de montanas de material de construccion"
+    title: "Operacion y despacho",
+    description: "Vista real de la zona de trabajo y movimiento operativo.",
+    image: "assets/images/hero-operacion.jpg",
+    alt: "Operacion real de Arenera Solichata con maquinaria y despacho"
   },
   {
-    title: "Despacho y volquetas",
-    description: "Zona pensada para resaltar entrega, carga y movimiento de material.",
-    image: "assets/images/gallery-dispatch.svg",
-    alt: "Ilustracion de volquetas y despacho de material"
+    title: "Arena lavada",
+    description: "Material disponible para mezclas, acabados y obra.",
+    image: "assets/images/producto-arena.jpg",
+    alt: "Arena lavada disponible en Arenera Solichata"
   },
   {
-    title: "Maquinaria de trabajo",
-    description: "Espacio visual para mostrar equipo, fuerza operativa y cumplimiento.",
-    image: "assets/images/gallery-machinery.svg",
-    alt: "Ilustracion de maquinaria pesada en la arenera"
+    title: "Piedra",
+    description: "Material para bases, relleno y necesidades de construccion.",
+    image: "assets/images/producto-piedra.jpg",
+    alt: "Piedra disponible en Arenera Solichata"
   },
   {
-    title: "Operacion en la arenera",
-    description: "Composicion para comunicar entorno natural, cantera y produccion.",
-    image: "assets/images/gallery-quarry.svg",
-    alt: "Ilustracion del frente de trabajo de una arenera"
+    title: "Identidad Solichata",
+    description: "Logo comercial usado como apoyo de marca en la galeria.",
+    image: "assets/images/logo-solichata.png",
+    alt: "Logo de Arenera Solichata",
+    isLogo: true
   }
 ];
 
@@ -214,7 +218,7 @@ function renderGallery() {
     .map(
       (item) => `
         <article
-          class="gallery-card reveal"
+          class="gallery-card reveal${item.isLogo ? " gallery-card-logo" : ""}"
           tabindex="0"
           role="button"
           data-image="${item.image}"
@@ -266,6 +270,10 @@ function handleOrderSubmit(event) {
 }
 
 function setupWhatsAppLinks() {
+  document.querySelectorAll(".js-whatsapp-link").forEach((link) => {
+    link.setAttribute("href", buildWhatsAppUrl(link.dataset.message || ""));
+  });
+
   document.addEventListener("click", (event) => {
     const link = event.target.closest(".js-whatsapp-link");
     if (!link) {
