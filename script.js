@@ -81,11 +81,10 @@ const galleryItems = [
     alt: "Piedra disponible en Arenera Solichata"
   },
   {
-    title: "Identidad Solichata",
-    description: "Logo comercial usado como apoyo de marca en la galeria.",
-    image: "assets/images/logo-solichata.png",
-    alt: "Logo de Arenera Solichata",
-    isLogo: true
+    title: "Legado familiar",
+    description: "La historia y el compromiso detras de Arenera Solichata.",
+    image: "assets/images/fundador-solichata.jpg",
+    alt: "Fundador de Arenera Solichata y legado familiar"
   }
 ];
 
