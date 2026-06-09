@@ -1,35 +1,35 @@
 const WHATSAPP_NUMBER = "584141290808";
 
 // TODO(firebase): Reemplazar este array por datos de Firestore para administrar
-// productos, imagenes y disponibilidad desde un panel interno.
+// productos, imágenes y disponibilidad desde un panel interno.
 const products = [
   {
     name: "Arena lavada",
     description:
-      "Material ideal para construccion, mezclas, acabados y obras que requieren arena limpia y de buena calidad.",
+      "Material ideal para construcción, mezclas, acabados y obras que requieren arena limpia y de buena calidad.",
     // Foto real de arena; si el cliente confirma que esta imagen corresponde a piedra,
     // intercambiar solo esta ruta con la del siguiente producto.
     image: "assets/images/producto-arena.jpg",
-    category: "Material de construccion",
+    category: "Material de construcción",
     message: "Hola, quiero cotizar Arena lavada."
   },
   {
     name: "Piedra",
     description:
-      "Piedra para construccion, relleno, bases y diferentes necesidades de obra.",
+      "Piedra para construcción, relleno, bases y diferentes necesidades de obra.",
     // Foto real de piedra; si visualmente estuviera invertida, cambiar esta ruta por producto-arena.jpg.
     image: "assets/images/producto-piedra.jpg",
-    category: "Material de construccion",
+    category: "Material de construcción",
     message: "Hola, quiero cotizar Piedra."
   }
 ];
 
 // TODO(firebase): Esta lista luego puede salir de Firestore para permitir
-// editar servicios y textos comerciales sin tocar el codigo fuente.
+// editar servicios y textos comerciales sin tocar el código fuente.
 const services = [
   {
-    title: "Venta de materiales para construccion",
-    description: "Presentacion clara de productos principales con enfoque comercial y directo.",
+    title: "Venta de materiales para construcción",
+    description: "Presentación clara de productos principales con enfoque comercial y directo.",
     icon: "layers"
   },
   {
@@ -39,7 +39,7 @@ const services = [
   },
   {
     title: "Transporte en volqueta",
-    description: "Seccion orientada a destacar capacidad de movimiento y servicio para obra.",
+    description: "Sección orientada a destacar capacidad de movimiento y servicio para obra.",
     icon: "route"
   },
   {
@@ -48,25 +48,23 @@ const services = [
     icon: "document"
   },
   {
-    title: "Atencion por WhatsApp",
-    description: "Llamados a la accion visibles en hero, cards, formulario y cierre comercial.",
+    title: "Atención por WhatsApp",
+    description: "Llamados a la acción visibles en hero, cards, formulario y cierre comercial.",
     icon: "message"
   },
   {
     title: "Pedidos por cantidad",
-    description: "Formulario preparado para capturar volumen, ubicacion y comentarios del cliente.",
+    description: "Formulario preparado para capturar volumen, ubicación y comentarios del cliente.",
     icon: "measure"
   }
 ];
 
-// TODO(firebase-storage): Reemplazar o ampliar estas fotos desde Storage cuando
-// se implemente el panel administrativo.
 const galleryItems = [
   {
-    title: "Operacion y despacho",
+    title: "Operación y despacho",
     description: "Vista real de la zona de trabajo y movimiento operativo.",
     image: "assets/images/hero-operacion.jpg",
-    alt: "Operacion real de Arenera Solichata con maquinaria y despacho"
+    alt: "Operación real de Arenera Solichata con maquinaria y despacho"
   },
   {
     title: "Arena lavada",
@@ -76,21 +74,87 @@ const galleryItems = [
   },
   {
     title: "Piedra",
-    description: "Material para bases, relleno y necesidades de construccion.",
+    description: "Material para bases, relleno y necesidades de construcción.",
     image: "assets/images/producto-piedra.jpg",
     alt: "Piedra disponible en Arenera Solichata"
   },
   {
     title: "Legado familiar",
-    description: "La historia y el compromiso detras de Arenera Solichata.",
+    description: "La historia y el compromiso detrás de Arenera Solichata.",
     image: "assets/images/fundador-solichata.jpg",
     alt: "Fundador de Arenera Solichata y legado familiar"
+  }
+];
+
+const certificationItems = [
+  {
+    title: "Portada del informe técnico",
+    image: "assets/certificaciones/certificacion-01-portada.png"
+  },
+  {
+    title: "Resumen técnico de laboratorio",
+    image: "assets/certificaciones/certificacion-02-resumen-tecnico.png"
+  },
+  {
+    title: "Peso unitario suelto - Grava 3/4\"",
+    image: "assets/certificaciones/certificacion-03-peso-unitario-suelto-grava.png"
+  },
+  {
+    title: "Peso unitario suelto - Arena",
+    image: "assets/certificaciones/certificacion-04-peso-unitario-suelto-arena.png"
+  },
+  {
+    title: "Peso unitario compacto - Grava 3/4\"",
+    image: "assets/certificaciones/certificacion-05-peso-unitario-compacto-grava.png"
+  },
+  {
+    title: "Peso unitario compacto - Arena",
+    image: "assets/certificaciones/certificacion-06-peso-unitario-compacto-arena.png"
+  },
+  {
+    title: "Peso específico y absorción - Piedra picada",
+    image: "assets/certificaciones/certificacion-07-peso-especifico-absorcion-piedra.png"
+  },
+  {
+    title: "Peso específico y absorción - Arena",
+    image: "assets/certificaciones/certificacion-08-peso-especifico-absorcion-arena.png"
+  },
+  {
+    title: "Materia orgánica - Arena",
+    image: "assets/certificaciones/certificacion-09-materia-organica-arena.png"
+  },
+  {
+    title: "Granulometría - Arena",
+    image: "assets/certificaciones/certificacion-10-granulometria-arena.png"
+  },
+  {
+    title: "Granulometría - Grava",
+    image: "assets/certificaciones/certificacion-11-granulometria-grava.png"
+  },
+  {
+    title: "Disgregabilidad a los sulfatos",
+    image: "assets/certificaciones/certificacion-12-disgregabilidad-sulfato.png"
+  },
+  {
+    title: "Desgaste Los Angeles",
+    image: "assets/certificaciones/certificacion-13-desgaste-los-angeles.png"
+  },
+  {
+    title: "Cloruros y sulfatos",
+    image: "assets/certificaciones/certificacion-14-cloruros-sulfatos.png"
   }
 ];
 
 const productsGrid = document.querySelector("#products-grid");
 const servicesGrid = document.querySelector("#services-grid");
 const galleryGrid = document.querySelector("#gallery-grid");
+const certImage = document.querySelector("#cert-image");
+const certTitle = document.querySelector("#cert-title");
+const certCounter = document.querySelector("#cert-counter");
+const certDots = document.querySelector("#cert-dots");
+const certFrame = document.querySelector("#cert-frame");
+const certPrev = document.querySelector("#cert-prev");
+const certNext = document.querySelector("#cert-next");
 const productInterestSelect = document.querySelector("#product-interest");
 const orderForm = document.querySelector("#order-form");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -101,6 +165,7 @@ const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxCaption = document.querySelector("#lightbox-caption");
 const lightboxClose = document.querySelector("#lightbox-close");
 const revealElements = document.querySelectorAll(".reveal");
+let activeCertificationIndex = 0;
 
 const iconMap = {
   layers: `
@@ -186,7 +251,7 @@ function renderProducts() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Solicitar cotizacion
+                Solicitar cotización
               </a>
             </div>
           </div>
@@ -236,6 +301,95 @@ function renderGallery() {
     .join("");
 }
 
+function renderCertificationCarousel() {
+  if (!certImage || !certTitle || !certCounter || !certDots) {
+    return;
+  }
+
+  certDots.innerHTML = certificationItems
+    .map(
+      (_, index) => `
+        <button
+          class="certification-dot"
+          type="button"
+          data-index="${index}"
+          aria-label="Ver certificación ${index + 1}"
+        ></button>
+      `
+    )
+    .join("");
+
+  updateCertificationCarousel(0);
+}
+
+function updateCertificationCarousel(index) {
+  if (!certImage || !certTitle || !certCounter || !certDots || !certFrame) {
+    return;
+  }
+
+  activeCertificationIndex = (index + certificationItems.length) % certificationItems.length;
+  const item = certificationItems[activeCertificationIndex];
+
+  const applyCertification = () => {
+    certImage.src = item.image;
+    certImage.alt = item.title;
+    certTitle.textContent = item.title;
+    certCounter.textContent = `${activeCertificationIndex + 1} / ${certificationItems.length}`;
+
+    certDots.querySelectorAll(".certification-dot").forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeCertificationIndex;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+  };
+
+  if (!certImage.getAttribute("src")) {
+    applyCertification();
+    return;
+  }
+
+  certFrame.classList.add("is-changing");
+  window.setTimeout(() => {
+    applyCertification();
+    window.requestAnimationFrame(() => {
+      certFrame.classList.remove("is-changing");
+    });
+  }, 140);
+}
+
+function setupCertificationCarousel() {
+  if (!certFrame || !certPrev || !certNext || !certDots) {
+    return;
+  }
+
+  certPrev.addEventListener("click", () => updateCertificationCarousel(activeCertificationIndex - 1));
+  certNext.addEventListener("click", () => updateCertificationCarousel(activeCertificationIndex + 1));
+
+  certDots.addEventListener("click", (event) => {
+    const dot = event.target.closest(".certification-dot");
+    if (!dot) {
+      return;
+    }
+
+    updateCertificationCarousel(Number(dot.dataset.index));
+  });
+
+  certFrame.addEventListener("click", () => {
+    const item = certificationItems[activeCertificationIndex];
+    openLightbox(item.image, item.title, item.title);
+  });
+
+  certFrame.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      updateCertificationCarousel(activeCertificationIndex - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      updateCertificationCarousel(activeCertificationIndex + 1);
+    }
+  });
+}
+
 function populateProductSelect() {
   products.forEach((product) => {
     const option = document.createElement("option");
@@ -262,7 +416,7 @@ function handleOrderSubmit(event) {
     `Nombre: ${payload.name}\n` +
     `Producto: ${payload.product}\n` +
     `Cantidad aproximada: ${payload.quantity}\n` +
-    `Ubicacion: ${payload.location}\n` +
+    `Ubicación: ${payload.location}\n` +
     `Comentario: ${payload.comment}`;
 
   window.open(buildWhatsAppUrl(message), "_blank", "noopener");
@@ -384,9 +538,11 @@ function init() {
   renderProducts();
   renderServices();
   renderGallery();
+  renderCertificationCarousel();
   populateProductSelect();
   setupWhatsAppLinks();
   setupMobileMenu();
+  setupCertificationCarousel();
   setupGalleryLightbox();
   setupRevealOnScroll();
   orderForm.addEventListener("submit", handleOrderSubmit);
