@@ -349,11 +349,15 @@ select {
 
 .hero-main-image {
   width: 100%;
-  min-height: 460px;
+  height: clamp(500px, 68vh, 660px);
   border-radius: 26px;
   object-fit: cover;
   object-position: center;
   background: linear-gradient(160deg, rgba(91, 102, 114, 0.12), rgba(239, 141, 31, 0.12));
+}
+
+.hero-founder-frame .hero-main-image {
+  object-position: center 44%;
 }
 
 .hero-floating-card {
@@ -905,11 +909,19 @@ body.menu-open {
 
 @media (max-width: 719px) {
   .hero {
-    padding-top: 3rem;
+    padding-top: 1.4rem;
+  }
+
+  .hero-visual {
+    order: -1;
   }
 
   .hero-main-image {
-    min-height: 360px;
+    height: clamp(430px, 72vh, 560px);
+  }
+
+  .hero-founder-frame .hero-main-image {
+    object-position: center 38%;
   }
 
   .hero-floating-card,

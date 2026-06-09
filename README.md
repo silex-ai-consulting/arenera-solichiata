@@ -48,7 +48,7 @@ http://127.0.0.1:4173/index.html
 - `index.html`: estructura semantica de la landing.
 - `styles.css`: estilos modernos, variables visuales y responsive.
 - `script.js`: render de productos, servicios, galeria, menu, modal y WhatsApp.
-- `assets/images`: logo y fotos principales del negocio (`logo-solichata.png`, `hero-operacion.jpg`, `producto-arena.jpg`, `producto-piedra.jpg`).
+- `assets/images`: logo y fotos principales del negocio (`logo-solichata.png`, `fundador-solichata.jpg`, `hero-operacion.jpg`, `producto-arena.jpg`, `producto-piedra.jpg`).
 - `assets/icons`: favicon e iconos generados desde el logo.
 
 ## WhatsApp
