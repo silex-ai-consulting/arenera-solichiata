@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "584141290808";
+const WHATSAPP_NUMBER = "584149215880";
 
 // TODO(firebase): Reemplazar este array por datos de Firestore para administrar
 // productos, imágenes y disponibilidad desde un panel interno.
@@ -29,27 +29,27 @@ const products = [
 const services = [
   {
     title: "Venta de materiales para construcción",
-    description: "Presentación clara de productos principales con enfoque comercial y directo.",
+    description: "Arena lavada y piedra con atención directa para obras y proyectos.",
     icon: "layers"
   },
   {
     title: "Despacho de arena y piedra",
-    description: "Espacio listo para comunicar cobertura, tiempos y condiciones de entrega.",
+    description: "Coordinación de entregas según disponibilidad, volumen y ubicación.",
     icon: "truck"
   },
   {
     title: "Transporte en volqueta",
-    description: "Sección orientada a destacar capacidad de movimiento y servicio para obra.",
+    description: "Flete y transporte de materiales para mantener la obra en marcha.",
     icon: "route"
   },
   {
     title: "Cotizaciones para obras",
-    description: "Botones y mensajes listos para iniciar conversaciones comerciales desde WhatsApp.",
+    description: "Botones y mensajes listos para solicitar precios, volúmenes y despacho.",
     icon: "document"
   },
   {
     title: "Atención por WhatsApp",
-    description: "Llamados a la acción visibles en hero, cards, formulario y cierre comercial.",
+    description: "Comunicación directa para pedidos, cotizaciones y seguimiento comercial.",
     icon: "message"
   },
   {
@@ -64,25 +64,25 @@ const galleryItems = [
     title: "Operación y despacho",
     description: "Vista real de la zona de trabajo y movimiento operativo.",
     image: "assets/images/hero-operacion.jpg",
-    alt: "Operación real de Arenera Solichata con maquinaria y despacho"
+    alt: "Operación real de Arenera Solichiata con maquinaria y despacho"
   },
   {
     title: "Arena lavada",
     description: "Material disponible para mezclas, acabados y obra.",
     image: "assets/images/producto-arena.jpg",
-    alt: "Arena lavada disponible en Arenera Solichata"
+    alt: "Arena lavada disponible en Arenera Solichiata"
   },
   {
     title: "Piedra",
     description: "Material para bases, relleno y necesidades de construcción.",
     image: "assets/images/producto-piedra.jpg",
-    alt: "Piedra disponible en Arenera Solichata"
+    alt: "Piedra disponible en Arenera Solichiata"
   },
   {
     title: "Legado familiar",
-    description: "La historia y el compromiso detrás de Arenera Solichata.",
+    description: "La historia y el compromiso detrás de Arenera Solichiata.",
     image: "assets/images/fundador-solichata.jpg",
-    alt: "Fundador de Arenera Solichata y legado familiar"
+    alt: "Fundador de Arenera Solichiata y legado familiar"
   }
 ];
 
@@ -228,7 +228,7 @@ function renderProducts() {
       return `
         <article class="product-card reveal">
           <div class="product-media">
-            <img src="${product.image}" alt="${product.name} disponible en Arenera Solichata">
+            <img src="${product.image}" alt="${product.name} disponible en Arenera Solichiata">
           </div>
           <div class="product-body">
             <span class="category-chip">${product.category}</span>
@@ -412,7 +412,7 @@ function handleOrderSubmit(event) {
   };
 
   const message =
-    `Hola, quiero hacer un pedido en Arenera Solichata.\n` +
+    `Hola, quiero hacer un pedido en Arenera Solichiata, C.A.\n` +
     `Nombre: ${payload.name}\n` +
     `Producto: ${payload.product}\n` +
     `Cantidad aproximada: ${payload.quantity}\n` +
@@ -457,7 +457,7 @@ function setupMobileMenu() {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth >= 960) {
+    if (window.innerWidth > 1060) {
       toggleMenu(false);
     }
   });
