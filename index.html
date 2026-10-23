@@ -25,11 +25,11 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Montserrat:wght@600;700;800&display=swap"
     rel="stylesheet"
   >
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261023-4">
 </head>
 <body>
   <div class="page-shell">
-    <header class="site-header" id="inicio">
+    <header class="site-header">
       <div class="topbar">
         <p>Arenera Solichiata, C.A. · RIF: J-31445571-0 · Materiales para construcción con atención directa, despacho y cotización por WhatsApp.</p>
       </div>
@@ -59,6 +59,7 @@
           <a href="#compromiso">Empresa</a>
           <a href="#productos">Productos</a>
           <a href="#certificaciones">Certificaciones</a>
+          <a href="#multimedia">Planta</a>
           <a href="#contacto">Contacto</a>
           <a class="button button-primary button-nav" href="#pedido">Hacer pedido</a>
         </div>
@@ -66,7 +67,7 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" id="inicio">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <span class="eyebrow">Legado, materiales y atención directa</span>
@@ -77,6 +78,15 @@
               transformamos materiales seleccionados de la zona de Chuspita y Caucagua en
               agregados confiables para obras que exigen calidad, cumplimiento y respaldo técnico.
             </p>
+            <div class="hero-brand-signature" aria-label="Identidad comercial de Arenera Solichiata, C.A.">
+              <img
+                src="assets/images/logo-solichata.png"
+                alt="Arenera Solichiata, C.A. Un legado de fuerza y compromiso. Establecida en 2006"
+                width="1280"
+                height="796"
+                decoding="async"
+              >
+            </div>
             <div class="hero-actions">
               <a class="button button-primary" href="#productos">Ver productos</a>
               <a
@@ -102,6 +112,9 @@
                 class="hero-main-image"
                 src="assets/images/fundador-solichata.jpg"
                 alt="Fundador de Arenera Solichiata como símbolo de legado, experiencia y confianza"
+                width="896"
+                height="1195"
+                fetchpriority="high"
               >
               <div class="hero-floating-card">
                 <span>Desde 2006</span>
@@ -149,19 +162,76 @@
         </div>
       </section>
 
+      <section class="section quality-choice-section" id="calidad-materiales">
+        <div class="container quality-choice-grid">
+          <div class="quality-choice-media reveal">
+            <img
+              src="assets/images/acopio-agregados-2026.webp"
+              alt="Acopio de agregados junto a la línea de procesamiento de la planta"
+              width="293"
+              height="302"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="quality-choice-media-caption">
+              <span>Selección informada</span>
+              <strong>El material debe responder al uso y a la especificación de la obra.</strong>
+            </div>
+          </div>
+
+          <div class="quality-choice-copy reveal">
+            <span class="eyebrow">Decisiones que cuidan la inversión</span>
+            <h2>La calidad de los materiales importa.</h2>
+            <p class="quality-choice-lead">
+              Elegir un agregado solo por el precio puede trasladar costos a la mezcla, los
+              acabados o el retrabajo. Antes de comprar, conviene revisar el uso previsto, la
+              granulometría requerida, el volumen y las condiciones de entrega.
+            </p>
+            <div class="quality-principles">
+              <article>
+                <span>01</span>
+                <h3>Especificación antes del precio</h3>
+                <p>Define con el responsable técnico qué material necesita el proyecto antes de comparar ofertas.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Resultados que se leen por muestra</h3>
+                <p>Los ensayos disponibles caracterizan muestras concretas y deben interpretarse junto con sus observaciones.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Despacho coordinado</h3>
+                <p>Confirma disponibilidad, cantidad, acceso y fecha de entrega al solicitar la cotización.</p>
+              </article>
+            </div>
+            <div class="quality-choice-actions">
+              <a
+                class="button button-primary js-whatsapp-link"
+                href="https://wa.me/584149215880?text=Hola%2C%20quiero%20cotizar%20materiales%20y%20revisar%20cu%C3%A1l%20se%20ajusta%20a%20mi%20obra."
+                data-message="Hola, quiero cotizar materiales y revisar cuál se ajusta a mi obra."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Consultar por WhatsApp
+              </a>
+              <a class="text-link" href="#certificaciones">Revisar ensayos disponibles</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section certifications-section" id="certificaciones">
         <div class="container certifications-layout">
           <div class="section-heading reveal">
-            <span class="eyebrow">Control técnico</span>
-            <h2>Certificaciones y control de calidad</h2>
+            <span class="eyebrow">Caracterización técnica</span>
+            <h2>Ensayos de laboratorio y control técnico</h2>
             <p>
-              Nuestros agregados cuentan con ensayos técnicos de laboratorio que respaldan
-              la calidad de los materiales suministrados para obras de construcción e
-              infraestructura.
+              El informe disponible reúne ensayos realizados sobre muestras de agregado fino
+              y grueso identificadas como procedentes de Arenera Solichiata, C.A.
             </p>
             <p class="section-note">
-              Informe técnico de caracterización de agregado fino y grueso de procedencia
-              Arenera Solichiata, C.A.
+              Los resultados corresponden a las muestras evaluadas. Revisa las observaciones de
+              cada ensayo y confirma la especificación aplicable con el responsable técnico de tu obra.
             </p>
             <a
               class="button button-secondary"
@@ -217,7 +287,14 @@
           </div>
           <article class="transport-feature reveal">
             <div class="transport-media">
-              <img src="assets/images/flota-volquetas.jpg" alt="Flota de volquetas para flete y transporte de materiales">
+              <img
+                src="assets/images/despacho-volqueta-2026.webp"
+                alt="Volqueta descargando agregados en la planta de Arenera Solichiata"
+                width="720"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              >
             </div>
             <div class="transport-copy">
               <span class="eyebrow">Despacho a obra</span>
@@ -265,8 +342,12 @@
           <div class="about-visual reveal">
             <div class="about-image-card">
               <img
-                src="assets/images/hero-operacion.jpg"
-                alt="Operación de Arenera Solichiata con material y maquinaria de trabajo"
+                src="assets/images/operacion-planta-2026.webp"
+                alt="Cargador frontal y volquetas durante la operación de planta"
+                width="481"
+                height="481"
+                loading="lazy"
+                decoding="async"
               >
               <div class="about-badge">
                 <span>Arenera Solichiata, C.A.</span>
@@ -299,9 +380,9 @@
               procesamiento y suministro de agregados para obras de construcción e infraestructura.
             </p>
             <p>
-              Nuestra experiencia incluye el suministro de materiales para proyectos de alto impacto,
-              manteniendo siempre una operación enfocada en calidad, responsabilidad ambiental y
-              cumplimiento.
+              La trayectoria institucional aportada por la empresa incluye el suministro de materiales
+              para proyectos de infraestructura, con una operación orientada a la calidad, la
+              responsabilidad ambiental y el cumplimiento.
             </p>
           </article>
           <div class="institution-grid">
@@ -310,23 +391,20 @@
               <h3>Operación, suministro oportuno y responsabilidad.</h3>
               <p>
                 En Arenera Solichiata, C.A., nos dedicamos a la extracción, procesamiento y
-                comercialización de agregados y minerales no metálicos de la más alta calidad
-                para el sector de la construcción e infraestructura. Nos comprometemos a
-                garantizar la continuidad operativa de nuestros clientes mediante un suministro
-                oportuno y una logística eficiente, operando bajo estrictos estándares de
-                seguridad, responsabilidad ambiental y compromiso con el desarrollo de nuestra
-                región.
+                comercialización de agregados y minerales no metálicos para el sector de la
+                construcción e infraestructura. Nuestro propósito es apoyar la continuidad de
+                las obras mediante suministro planificado, coordinación logística y una operación
+                orientada a la seguridad, la responsabilidad ambiental y el desarrollo regional.
               </p>
             </article>
             <article class="institution-card reveal">
               <span>Visión</span>
               <h3>Ser aliado técnico de referencia para obras exigentes.</h3>
               <p>
-                Consolidarnos como la empresa líder y el aliado estratégico de referencia en
-                el suministro de arenas y agregados en el mercado, siendo reconocidos por la
-                excelencia técnica de nuestros materiales, la confiabilidad de nuestros
-                servicios, la optimización de nuestros procesos mineros y nuestro modelo de
-                operación sostenible.
+                Aspiramos a consolidarnos como un aliado estratégico de referencia en el
+                suministro de arenas y agregados, reconocido por la mejora técnica de los
+                materiales, la confiabilidad del servicio, la optimización de los procesos
+                mineros y una operación sostenible.
               </p>
             </article>
           </div>
@@ -344,41 +422,40 @@
               <span>01</span>
               <h3>Puntualidad y confiabilidad</h3>
               <p>
-                Entendemos que en la construcción el tiempo es dinero. Aseguramos la entrega
-                de sus materiales en el volumen exacto y en el momento acordado.
+                Entendemos que la programación de una obra depende de información clara.
+                Coordinamos volumen, disponibilidad y entrega antes de confirmar cada despacho.
               </p>
             </article>
             <article class="value-card reveal">
               <span>02</span>
-              <h3>Calidad certificada</h3>
+              <h3>Seguimiento técnico</h3>
               <p>
-                Nos aseguramos de que nuestros materiales cumplan con las especificaciones
-                técnicas y granulometrías requeridas para garantizar la máxima resistencia en
-                sus proyectos.
+                Ponemos a disposición resultados de laboratorio de muestras evaluadas para
+                apoyar la revisión de requerimientos y granulometrías del proyecto.
               </p>
             </article>
             <article class="value-card reveal">
               <span>03</span>
               <h3>Eficiencia operativa</h3>
               <p>
-                Contamos con maquinaria óptima y un equipo capacitado para responder con
-                agilidad a las demandas de obras de cualquier escala.
+                Coordinamos maquinaria, atención comercial y logística de acuerdo con el
+                material, el volumen solicitado y la disponibilidad operativa.
               </p>
             </article>
             <article class="value-card reveal">
               <span>04</span>
               <h3>Responsabilidad ambiental</h3>
               <p>
-                Desarrollamos una actividad minera consciente, aplicando planes de mitigación
-                y respeto al entorno natural.
+                Orientamos la operación al uso responsable de los recursos y al cumplimiento
+                de las obligaciones ambientales aplicables.
               </p>
             </article>
             <article class="value-card reveal">
               <span>05</span>
               <h3>Transparencia comercial</h3>
               <p>
-                Construimos relaciones a largo plazo basadas en la honestidad, el pesaje justo
-                y el cumplimiento de cada palabra empeñada.
+                Buscamos relaciones de largo plazo basadas en información clara sobre el
+                material, la cantidad, el despacho y las condiciones acordadas.
               </p>
             </article>
           </div>
@@ -391,9 +468,8 @@
             <span class="eyebrow">Capacidad operativa</span>
             <h2>&iquest;Por qué elegir a Arenera Solichiata, C.A.?</h2>
             <p>
-              Porque no solo vendemos agregados; somos el soporte logístico que mantiene su
-              obra en marcha. Contamos con la capacidad operativa, el equipo pesado y el
-              material seleccionado para responder a sus exigencias de volumen y tiempo.
+              Integramos suministro, coordinación de despacho y atención directa para que cada
+              cliente pueda revisar material, volumen, ubicación y tiempos antes de confirmar.
             </p>
           </div>
           <a
@@ -419,6 +495,69 @@
             </p>
           </div>
           <div class="gallery-grid" id="gallery-grid"></div>
+        </div>
+      </section>
+
+      <section class="section multimedia-section" id="multimedia">
+        <div class="container">
+          <div class="section-heading section-heading-centered reveal">
+            <span class="eyebrow">Nuestra planta en acción</span>
+            <h2>Procesamiento, acopio y despacho en formato vertical.</h2>
+            <p>
+              Dos recorridos reales por la operación. Los videos se cargan únicamente cuando
+              decides reproducirlos y conservan su encuadre original.
+            </p>
+          </div>
+          <div class="video-grid">
+            <article class="video-card reveal">
+              <div class="video-frame">
+                <video
+                  controls
+                  playsinline
+                  preload="none"
+                  poster="assets/images/poster-planta-procesamiento.webp"
+                  aria-describedby="video-planta-description"
+                >
+                  <source src="assets/videos/planta-procesamiento.mp4" type="video/mp4">
+                  Tu navegador no permite reproducir este video. Puedes descargarlo desde
+                  <a href="assets/videos/planta-procesamiento.mp4">este enlace</a>.
+                </video>
+              </div>
+              <div class="video-card-body">
+                <span>00:29</span>
+                <h3>Recorrido por la planta</h3>
+                <p id="video-planta-description">
+                  Vista de la línea de procesamiento, las bandas transportadoras y los acopios de agregados.
+                </p>
+              </div>
+            </article>
+            <article class="video-card reveal">
+              <div class="video-frame">
+                <video
+                  controls
+                  playsinline
+                  preload="none"
+                  poster="assets/images/poster-despacho-agregados.webp"
+                  aria-describedby="video-despacho-description"
+                >
+                  <source src="assets/videos/despacho-agregados.mp4" type="video/mp4">
+                  Tu navegador no permite reproducir este video. Puedes descargarlo desde
+                  <a href="assets/videos/despacho-agregados.mp4">este enlace</a>.
+                </video>
+              </div>
+              <div class="video-card-body">
+                <span>00:56</span>
+                <h3>Descarga y manejo de agregados</h3>
+                <p id="video-despacho-description">
+                  Maniobra de descarga de una volqueta y panorámica de las áreas de procesamiento y acopio.
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="media-accessibility-note reveal">
+            Descripción alternativa incluida bajo cada video. La incorporación de subtítulos
+            requiere validar previamente si el audio contiene diálogo comercial o técnico relevante.
+          </p>
         </div>
       </section>
 
@@ -552,6 +691,7 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#productos">Productos</a></li>
             <li><a href="#certificaciones">Certificaciones</a></li>
+            <li><a href="#multimedia">Planta en acción</a></li>
             <li><a href="#compromiso">Empresa</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
@@ -573,7 +713,14 @@
     </footer>
   </div>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lightbox-caption"
+    aria-hidden="true"
+  >
     <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Cerrar imagen ampliada">
       &times;
     </button>
@@ -583,6 +730,6 @@
     </figure>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261023-4"></script>
 </body>
 </html>

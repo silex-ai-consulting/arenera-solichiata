@@ -6,7 +6,7 @@ const products = [
   {
     name: "Arena lavada",
     description:
-      "Material ideal para construcción, mezclas, acabados y obras que requieren arena limpia y de buena calidad.",
+      "Arena procesada para mezclas, acabados y obras, sujeta a la especificación técnica de cada proyecto.",
     // Foto real de arena; si el cliente confirma que esta imagen corresponde a piedra,
     // intercambiar solo esta ruta con la del siguiente producto.
     image: "assets/images/producto-arena.jpg",
@@ -61,28 +61,60 @@ const services = [
 
 const galleryItems = [
   {
+    title: "Planta y despacho",
+    description: "Maquinaria, carga y movimiento de materiales en la operación.",
+    image: "assets/images/operacion-planta-2026.webp",
+    alt: "Cargador frontal y volquetas en la planta de Arenera Solichiata",
+    width: 481,
+    height: 481
+  },
+  {
     title: "Operación y despacho",
     description: "Vista real de la zona de trabajo y movimiento operativo.",
     image: "assets/images/hero-operacion.jpg",
-    alt: "Operación real de Arenera Solichiata con maquinaria y despacho"
+    alt: "Operación real de Arenera Solichiata con maquinaria y despacho",
+    width: 498,
+    height: 467
   },
   {
     title: "Arena lavada",
     description: "Material disponible para mezclas, acabados y obra.",
     image: "assets/images/producto-arena.jpg",
-    alt: "Arena lavada disponible en Arenera Solichiata"
+    alt: "Arena lavada disponible en Arenera Solichiata",
+    width: 960,
+    height: 540
   },
   {
     title: "Piedra",
     description: "Material para bases, relleno y necesidades de construcción.",
     image: "assets/images/producto-piedra.jpg",
-    alt: "Piedra disponible en Arenera Solichiata"
+    alt: "Piedra disponible en Arenera Solichiata",
+    width: 960,
+    height: 540
+  },
+  {
+    title: "Descarga de material",
+    description: "Volqueta durante una maniobra de descarga en planta.",
+    image: "assets/images/despacho-volqueta-2026.webp",
+    alt: "Volqueta descargando agregados en la planta de Arenera Solichiata",
+    width: 720,
+    height: 1280
+  },
+  {
+    title: "Acopio de agregados",
+    description: "Vista cercana del material y la línea de procesamiento.",
+    image: "assets/images/acopio-agregados-2026.webp",
+    alt: "Acopio de agregados junto a la línea de procesamiento",
+    width: 293,
+    height: 302
   },
   {
     title: "Legado familiar",
     description: "La historia y el compromiso detrás de Arenera Solichiata.",
     image: "assets/images/fundador-solichata.jpg",
-    alt: "Fundador de Arenera Solichiata y legado familiar"
+    alt: "Fundador de Arenera Solichiata y legado familiar",
+    width: 896,
+    height: 1195
   }
 ];
 
@@ -166,6 +198,7 @@ const lightboxCaption = document.querySelector("#lightbox-caption");
 const lightboxClose = document.querySelector("#lightbox-close");
 const revealElements = document.querySelectorAll(".reveal");
 let activeCertificationIndex = 0;
+let lightboxTrigger = null;
 
 const iconMap = {
   layers: `
@@ -228,7 +261,14 @@ function renderProducts() {
       return `
         <article class="product-card reveal">
           <div class="product-media">
-            <img src="${product.image}" alt="${product.name} disponible en Arenera Solichiata">
+            <img
+              src="${product.image}"
+              alt="${product.name} disponible en Arenera Solichiata"
+              width="960"
+              height="540"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
           <div class="product-body">
             <span class="category-chip">${product.category}</span>
@@ -290,7 +330,14 @@ function renderGallery() {
           data-alt="${item.alt}"
           aria-label="Ampliar ${item.title}"
         >
-          <img src="${item.image}" alt="${item.alt}">
+          <img
+            src="${item.image}"
+            alt="${item.alt}"
+            width="${item.width}"
+            height="${item.height}"
+            loading="lazy"
+            decoding="async"
+          >
           <div class="gallery-caption">
             <strong>${item.title}</strong>
             <span>${item.description}</span>
@@ -464,12 +511,14 @@ function setupMobileMenu() {
 }
 
 function openLightbox(imageSrc, altText, captionText) {
+  lightboxTrigger = document.activeElement;
   lightboxImage.src = imageSrc;
   lightboxImage.alt = altText;
   lightboxCaption.textContent = captionText;
   lightbox.classList.add("is-open");
   lightbox.setAttribute("aria-hidden", "false");
   document.body.classList.add("menu-open");
+  window.requestAnimationFrame(() => lightboxClose.focus());
 }
 
 function closeLightbox() {
@@ -477,6 +526,10 @@ function closeLightbox() {
   lightbox.setAttribute("aria-hidden", "true");
   lightboxImage.src = "";
   document.body.classList.remove("menu-open");
+  if (lightboxTrigger instanceof HTMLElement) {
+    lightboxTrigger.focus();
+  }
+  lightboxTrigger = null;
 }
 
 function setupGalleryLightbox() {
@@ -511,6 +564,11 @@ function setupGalleryLightbox() {
     if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
       closeLightbox();
     }
+
+    if (event.key === "Tab" && lightbox.classList.contains("is-open")) {
+      event.preventDefault();
+      lightboxClose.focus();
+    }
   });
 }
 
@@ -534,6 +592,24 @@ function setupRevealOnScroll() {
   });
 }
 
+function restoreHashPosition() {
+  const targetId = decodeURIComponent(window.location.hash.slice(1));
+  if (!targetId) {
+    return;
+  }
+
+  const target = document.getElementById(targetId);
+  if (!target) {
+    return;
+  }
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      target.scrollIntoView({ block: "start" });
+    });
+  });
+}
+
 function init() {
   renderProducts();
   renderServices();
@@ -546,6 +622,7 @@ function init() {
   setupGalleryLightbox();
   setupRevealOnScroll();
   orderForm.addEventListener("submit", handleOrderSubmit);
+  restoreHashPosition();
 }
 
 init();
