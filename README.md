@@ -1,26 +1,28 @@
-# Arenera Solichata
+# Arenera Solichiata
 
-Landing page comercial de Arenera Solichata con imágenes reales, favicon del logo, certificaciones técnicas y contacto directo por WhatsApp.
+Sitio comercial estático de Arenera Solichiata, C.A. con contenido institucional, productos, ensayos técnicos, galería, videos de planta y contacto directo por WhatsApp.
 
 ## GitHub Pages
 
-URL prevista del sitio publicado:
+Sitio público:
 
 ```text
-https://silex-ai-consulting.github.io/arenera-solichiata/
+https://arenerasolichiata.net/
 ```
 
-Si GitHub Pages aún no está activo, esa URL funcionará después de publicar la rama correspondiente.
+El dominio apunta a GitHub Pages. La rama `main` conserva el archivo `CNAME`; no debe eliminarse al promover cambios desde `develop`.
 
 ## Contenido del sitio
 
-Esta versión presenta la página comercial final de Arenera Solichata, C.A.:
+Esta versión presenta la página comercial final de Arenera Solichiata, C.A.:
 
-- Landing comercial responsive.
+- Landing comercial responsive y accesible por teclado.
 - Productos renderizados desde JavaScript.
 - Botones y formulario conectados a WhatsApp.
-- Galería visual con fotos reales y modal para ampliar piezas.
-- Carrusel de certificaciones técnicas con acceso al informe completo.
+- Galería visual con fotos reales optimizadas y modal accesible.
+- Sección de videos verticales con carga bajo demanda y portadas locales.
+- Sección comercial sobre selección responsable de materiales.
+- Carrusel de ensayos técnicos con acceso al informe completo.
 - Secciones institucionales de misión, visión, valores y responsabilidad ambiental.
 
 ## Abrir localmente
@@ -49,17 +51,31 @@ http://127.0.0.1:4173/index.html
 - `index.html`: estructura semántica de la landing.
 - `styles.css`: estilos modernos, variables visuales y responsive.
 - `script.js`: render de productos, servicios, galería, menú, modal, certificaciones y WhatsApp.
-- `assets/images`: logo y fotos principales del negocio (`logo-solichata.png`, `fundador-solichata.jpg`, `hero-operacion.jpg`, `producto-arena.jpg`, `producto-piedra.jpg`).
+- `assets/images`: logo, fotos principales, nuevas imágenes WebP y portadas de video.
+- `assets/videos`: videos MP4 optimizados para reproducción web.
 - `assets/icons`: favicon e iconos generados desde el logo.
 - `assets/certificaciones`: imágenes del informe técnico usadas en el carrusel.
 - `assets/docs`: informe técnico completo en PDF.
+- `docs/entrega-cliente.md`: inventario técnico, dominios, publicación, respaldo y pendientes.
 
 ## WhatsApp
 
 El número comercial está centralizado en `script.js`:
 
 ```js
-const WHATSAPP_NUMBER = "584141290808";
+const WHATSAPP_NUMBER = "584149215880";
 ```
 
 Todos los enlaces y el formulario arman la URL con `encodeURIComponent` para enviar mensajes listos por WhatsApp.
+
+El número anterior `584141290808` solo aparecía en una versión desactualizada de este README. La página publicada, el formulario y los enlaces usan `584149215880` (0414-9215880).
+
+## Flujo de actualización
+
+1. Crear o reutilizar una rama `feature/*` desde `develop`.
+2. Probar localmente con el servidor estático.
+3. Abrir un Pull Request de la feature hacia `develop`.
+4. Después de la revisión del cliente, abrir un Pull Request de `develop` hacia `main`.
+5. Verificar que `CNAME` siga presente en `main` antes de publicar.
+
+No se deben hacer force pushes ni publicar directamente en `main`.
